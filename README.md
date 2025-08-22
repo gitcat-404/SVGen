@@ -1,4 +1,5 @@
-# SVGen: Interpretable Vector Graphics Generation with Large Language Models
+# <img src="https://cdn-avatars.huggingface.co/v1/production/uploads/6830606cef839b9401da6de3/WUZR5uvh22Y0CMZ-K4OOC.png" alt="Logo" width="60" height="60" style="vertical-align: middle;"/> SVGen: Interpretable Vector Graphics Generation with Large Language Models
+
 # 🎉 Accepted by ACM MM 2025
 <div align="center" style="line-height: 1.2;">
 
