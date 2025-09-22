@@ -1,0 +1,34 @@
+{
+    "color_reasons": {
+      "file_name": "color_reasons.json",
+      "formatting": "sharegpt"
+    },
+    "colored_easy": {
+      "file_name": "colored_easy.json",
+      "formatting": "sharegpt"
+    },
+    "monochrome_1_easy": {
+      "file_name": "monochrome_1_easy.json",
+      "formatting": "sharegpt"
+    },
+    "monochrome_2_easy": {
+      "file_name": "monochrome_2_easy.json",
+      "formatting": "sharegpt"
+    },
+    "colored_1": {
+        "file_name": "colored_1.json",
+        "formatting": "sharegpt"
+      },
+      "colored_2": {
+          "file_name": "colored_2.json",
+          "formatting": "sharegpt"
+        },
+        "monochrome_1": {
+          "file_name": "monochrome_1.json",
+          "formatting": "sharegpt"
+        },
+        "monochrome_2": {
+            "file_name": "monochrome_2.json",
+            "formatting": "sharegpt"
+        }
+    }
