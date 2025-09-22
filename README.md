@@ -12,4 +12,55 @@
 [![Model SVGen-StarCoder2-3B](https://img.shields.io/badge/Model-SVGen--StarCoder2--3B-FFA500?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/gitcat-404/SVGen-StarCoder2-3B)
 [![Model SVGen-Qwen2.5-Coder-7B](https://img.shields.io/badge/Model-SVGen--Qwen2.5--Coder--7B-FFA500?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/gitcat-404/SVGen-Qwen2.5-Coder-7B-Instruct)
 </div>
-The README is coming soon.
+
+## 1. Introduction
+SVGen is an end-to-end model that generates high-quality SVG code from text. We fine-tuned a Large Language Model on our custom SVG-1M dataset using curriculum learning, Chain-of-Thought (CoT), and reinforcement learning.
+## 2. Dependencies
+This repo is built upon [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). Sincere thanks to their excellent work!
+### 2.1 Clone the Repository
+```bash
+git clone https://github.com/gitcat-404/SVGen.git
+cd SVGen
+```
+### 2.2 Create Conda Environment
+```bash
+conda create -n svgen python=3.10 -y
+conda activate svgen
+```
+### 2.3 Dependencies for cairosvg
+```bash
+sudo apt update
+sudo apt install libcairo2 libcairo2-dev
+```
+### 2.4 Python Dependencies
+```bash
+pip install torch==2.5.1+cu124 torchvision==0.20.0+cu124 --index-url https://download.pytorch.org/whl/cu124
+pip install -r requirements.txt
+cd LLaMA-Factory && pip install -e ".[torch,metrics]"
+```
+## 3. How to use
+### 3.1 Download Model Weights
+For this demonstration, we will be using our top-performing model, [SVGen-Qwen2.5-Coder-7B-Instruct](https://huggingface.co/gitcat-404/SVGen-Qwen2.5-Coder-7B-Instruct). Please download the model weights from Hugging Face and store them under the Models/ path.
+```bash
+pip install huggingface_hub
+hf download gitcat-404/SVGen-Qwen2.5-Coder-7B-Instruct --local-dir Models/SVGen-Qwen2.5-Coder-7B-Instruct
+```
+### 3.2 Interactive demo
+```bash
+python app.py
+```
+### 3.3 Inference
+Taking the test data for this task as an example, we will write the prompts that need to be inferred into a CSV file, such as the example provided in `test/color_test.csv`.
+```bash
+python inference.py \
+    --model_path Models/SVGen-Qwen2.5-Coder-7B-Instruct \
+    --csv_file_path test/color_test.csv \
+    --prompt_type qwen \
+    --output_folder "results/qwen_outputs"
+```
+## 4. Test
+Our evaluation metrics in this article are: Fréchet Inception Distance (FID), CLIPScore-T2I, CLIPScore-I2I, Preference Scores (HPS), and Aesthetic Score. The specific implementation is available in `test/` To test the model, first download `sac+logos+ava1-l14-linearMSE.pth` from [Huggingface](https://huggingface.co/haor/aesthetics/tree/main) and `hpc.pt` from [GitHub](https://github.com/tgxs002/align_sd?tab=readme-ov-file), placing them in the test/pretrain_weight/ folder. Next, modify `test/test.py` by filling in the folder containing the previously generated images, then run:"
+```bash
+python test/test.py
+```
+
