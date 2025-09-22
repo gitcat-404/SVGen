@@ -3,6 +3,10 @@
       "file_name": "color_reasons.json",
       "formatting": "sharegpt"
     },
+    "RL_data": {
+    "file_name": "RL_data.json",
+    "formatting": "sharegpt"
+    },
     "colored_easy": {
       "file_name": "colored_easy.json",
       "formatting": "sharegpt"
