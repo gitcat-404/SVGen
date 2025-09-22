@@ -63,4 +63,32 @@ Our evaluation metrics in this article are: Fréchet Inception Distance (FID), C
 ```bash
 python test/test.py
 ```
-
+## 5.Train
+All experiments are executed on 8×NVIDIA A800 GPUs using the AdamW optimizer (learning rate 4e-5), with a maximum sequence length of 8,000 tokens.In order to reproduce our experiments, please first download all data from 🤗[SVG-1M-Json](https://huggingface.co/datasets/gitcat-404/SVG-1M-Json) and place it in the `json_data/` folder. We have provided the training scripts in the `config/` folder. After modifying the configurations, you can execute them sequentially:
+```bash
+sh config/train_stage1.sh
+sh config/train_stage2.sh
+sh config/train_stage3.sh
+sh config/train_stage_RL.sh
+```
+## 6.Get SVG metadata from website
+This dataset was collected by web scraping public content from [IconFont](https://www.iconfont.cn/) and is intended for non-commercial academic research and technical exchange purposes only.
+```bash
+python Spider/CrawlingSVG_Icon.py
+```
+## 💕 Acknowledgments:
+We would like to extend our sincerest thanks to the projects and websites that inspired this work, specifically:
+[IconFont](https://www.iconfont.cn/)
+[LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)
+[LLM4SVG](https://github.com/ximinng/LLM4SVG)
+[OmniSVG](https://github.com/OmniSVG/OmniSVG)
+[Star-vector](https://github.com/joanrod/star-vector)
+## Citation
+```
+@article{wang2025svgen,
+  title={SVGen: Interpretable Vector Graphics Generation with Large Language Models},
+  author={Wang, Feiyu and Zhao, Zhiyuan and Liu, Yuandong and Zhang, Da and Gao, Junyu and Sun, Hao and Li, Xuelong},
+  journal={arXiv preprint arXiv:2508.09168},
+  year={2025}
+}
+```
