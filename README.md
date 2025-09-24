@@ -49,6 +49,7 @@ hf download gitcat-404/SVGen-Qwen2.5-Coder-7B-Instruct --local-dir Models/SVGen-
 ```bash
 python app.py
 ```
+![demo](./image/demo.jpg)
 ### 3.3 Inference
 Taking the test data for this task as an example, we will write the prompts that need to be inferred into a CSV file, such as the example provided in `test/color_test.csv`.
 ```bash
