@@ -15,6 +15,7 @@
 
 ## 1. Introduction
 SVGen is an end-to-end model that generates high-quality SVG code from text. We fine-tuned a Large Language Model on our custom SVG-1M dataset using curriculum learning, Chain-of-Thought (CoT), and reinforcement learning.
+![intr](./image/1.png)
 ## 2. Dependencies
 This repo is built upon [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). Sincere thanks to their excellent work!
 ### 2.1 Clone the Repository
