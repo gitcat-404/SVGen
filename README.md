@@ -78,6 +78,9 @@ This dataset was collected by web scraping public content from [IconFont](https:
 ```bash
 python Spider/CrawlingSVG_Icon.py
 ```
+## 7.Generated samples
+![sample](./image/3.png)
+
 ## 💕 Acknowledgments:
 We would like to extend our sincerest thanks to the projects and websites that inspired this work, specifically:
 [IconFont](https://www.iconfont.cn/)
