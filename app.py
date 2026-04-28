@@ -117,10 +117,10 @@ def generate_text_to_svg(
                 yield final_think_content, "Thinking complete, continuing to generate SVG...", None
 
     thread.join()
-    print("Stream generation finished.")
-    print("\n" + "="*30 + " Full Model Output START " + "="*30)
+    #print("Stream generation finished.")
+    #print("\n" + "="*30 + " Full Model Output START " + "="*30)
     print(full_output)
-    print("="*30 + " Full Model Output END " + "="*30 + "\n")
+    #print("="*30 + " Full Model Output END " + "="*30 + "\n")
 
     if '<svg' in full_output and '</svg>' in full_output:
         start_index = full_output.find('<svg')
